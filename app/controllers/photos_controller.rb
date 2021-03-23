@@ -1,4 +1,4 @@
 
-class MoviesController < ApplicationController
+class PhotosController < ApplicationController
 
 end
