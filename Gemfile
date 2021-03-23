@@ -29,3 +29,5 @@ gem "sinatra", "~> 2.1"
 gem "thin", "~> 1.8"
 
 gem "shotgun", "~> 0.9.2"
+
+gem "dotenv", "~> 2.7"
