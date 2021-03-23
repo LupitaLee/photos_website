@@ -8,7 +8,9 @@ class UsersController < ApplicationController
     post '/signup' do
      @user = User.new(username: params[:username],email: params[:email], password: params[:password])
         #your code here!
+        
         @user.save
+        session["user_id"] = user.id
             redirect "/login"
         
     end
@@ -18,7 +20,24 @@ class UsersController < ApplicationController
     end
 
     post '/login' do
+        if params[:username] == "" || params[:password] == ""
+            redirect '/login'
+        else
+            user = User.find_by(username: params[:username])
+            user && user.authenticate(params[:password])
+            session[:user_id] = user.id
+      
+            redirect "/account"
+        end
+        
     end
+
+    
+    delete '/logout' do
+        session.clear
+        redirect "/login"
+    end
+    
 
     
 
