@@ -1,0 +1,13 @@
+<h1>all Photos </h1>
+
+
+
+
+
+<ul>
+<% @photos.each do |photo| %>
+<li><%= photo.title%></li>
+# <li><%= photo.image_url%></li>
+<li><%= photo.description%></li>
+<% end %>
+</ul>

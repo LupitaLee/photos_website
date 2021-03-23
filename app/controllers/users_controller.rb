@@ -6,12 +6,18 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do
+        
      @user = User.new(username: params[:username],email: params[:email], password: params[:password])
         #your code here!
-        
+        # done- validate users input so bad data cannot be persisted to the database.
+
+        if params[:username] == "" || params[:email] == "" || params[:password] == ""
+            redirect '/signup'
+        else
         @user.save
-        session["user_id"] = user.id
-            redirect "/login"
+        session["user_id"] = @user.id
+        redirect "/login"
+        end
         
     end
 
@@ -33,9 +39,13 @@ class UsersController < ApplicationController
     end
 
     
-    delete '/logout' do
+    get '/logout' do
         session.clear
-        redirect "/login"
+        redirect "/"
+    end
+
+    get '/account' do 
+        erb :'users/account'
     end
     
 

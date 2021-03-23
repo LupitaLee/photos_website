@@ -1,0 +1,15 @@
+
+
+
+<form action="/photos/<%= @photos.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <label>Title:</label>
+  <input type="text" id="title" name="title" value="<%= @photo.title%>">
+
+  <label>Description:</label>
+  <input type="text" id="description" name="description" value="<%= @photo.description%>" >
+
+  <input type="submit" name="submit" id="submit" >
+
+</form>

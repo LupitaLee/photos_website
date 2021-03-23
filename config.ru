@@ -1,5 +1,6 @@
 require "./config/environment"
 
-use UsersController
+
 use PhotosController
+use UsersController
 run ApplicationController
