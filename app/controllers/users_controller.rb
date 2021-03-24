@@ -12,7 +12,7 @@ class UsersController < ApplicationController
         # done- validate users input so bad data cannot be persisted to the database.
 
         if params[:username] == "" || params[:email] == "" || params[:password] == ""
-            redirect '/signup'
+            redirect '/signup'  #also flash can go here if user user input wrong password or dind fill in 
         else
         @user.save
         session["user_id"] = @user.id
