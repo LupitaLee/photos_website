@@ -6,8 +6,19 @@
 
 <ul>
 <% @photos.each do |photo| %>
-<li><%= photo.title%></li>
-# <li><%= photo.image_url%></li>
-<li><%= photo.description%></li>
+<h2><%= photo.title%></h2>
+<img src="<%= photo.image_url%>" alt="<%= photo.description%>" width="240" height="300"><br>
+<%= photo.description%>
 <% end %>
 </ul>
+
+
+
+<!-- <ul>
+# <% @photos.each do |photo| %>
+# <li><%= photo.title%></li>
+# <li><%= photo.image_url%></li>
+# <li><%= photo.description%></li>
+# <% end %>
+# </ul>
+ -->

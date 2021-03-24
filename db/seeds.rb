@@ -1,10 +1,10 @@
 puts "adding photos to users"
 
-7.times do 
+3.times do 
     Photo.create ({
     :title => Faker::Fantasy::Tolkien.character,
 
-    :image_url => Faker::LoremFlickr.image(size: "320x240", search_terms: ['flowers']),
+    :image_url => "https://source.unsplash.com/random/200x200?sig=#{(0..100).to_a.sample}",
     
     :description => Faker::Lorem.words,
 

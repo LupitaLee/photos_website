@@ -14,11 +14,11 @@ class PhotosController < ApplicationController
     end
 
 
-    post '/photos' do # create action creating and saving new recipe based on params from form, then redirects to show page
+    post '/photos' do
       
-        @photo = Photo.new(params["title"],params["description"])
+        @photo = Photo.new(params["title"],params["image_url"],params["description"])
     
-        redirect to "/photos/#{@recipe.id}"
+        redirect to "/photos/#{@photo.id}"
     end
 
     get '/photos/:id' do
