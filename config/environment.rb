@@ -5,8 +5,8 @@ require 'dotenv/load'
 require 'bundler/setup'
 Bundler.require(:default, ENV['SINATRA_ENV'])
 ActiveRecord::Base.establish_connection(
-  :adapter => "sqlite3",                           #may not need this 2 
-  :database => "db/#{ENV['SINATRA_ENV']}.sqlite"  #may not need this 2 
+  :adapter => "sqlite3",                          
+  :database => "db/#{ENV['SINATRA_ENV']}.sqlite3"  #changed this to squilie 3 
 )
 require './app/controllers/application_controller'
 require_all 'app'

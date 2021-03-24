@@ -1,7 +1,19 @@
 
 
+
+
 <form action="/login" method="POST">
-<input type="text" name="username" placeholder="Username:">
-<input type="password" name="password" placeholder="Password:">
-<input type="submit" value="Log In">
+  <div class="container">
+    <h1>Log In</h1>
+
+
+	<label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required><br>
+    <div class="clearfix"><br>
+    
+    <button type="submit" class="loginbtn">Log In</button>
 </form>
