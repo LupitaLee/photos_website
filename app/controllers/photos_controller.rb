@@ -8,21 +8,31 @@ class PhotosController < ApplicationController
     end
 
     get '/photos/new' do 
-        @photos = Photo.new 
+        # @photos = Photo.new 
        
         erb :'photos/new'
     end
 
 
     post '/photos' do
-      
-        @photo = Photo.new(params["title"],params["image_url"],params["description"])
+        if current_user
+     
+        photo = Photo.new(title:params[:title],image_url:params[:image_url],description:params[:description])
+       
+       
+        photo.save
     
-        redirect to "/photos/#{@photo.id}"
+        redirect to "/photos/#{photo.id}"
+        else 
+        redirect to "/photos"
+        end
+
     end
 
     get '/photos/:id' do
+
         @photo = Photo.find_by(params[:id])
+        
         erb :'photos/show'
     end
 
