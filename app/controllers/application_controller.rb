@@ -24,8 +24,17 @@ class ApplicationController < Sinatra::Base
 		end
 
 		def current_user
-			User.find(session[:user_id])
+             # memoization
+            @current_user ||= User.find_by_id(session["user_id"])
 		end
+
+        def redirect_if_not_logged_in
+            redirect "/login" if !logged_in?
+        end
+
+        def redirect_if_logged_in
+            redirect "/photo" if logged_in?
+        end
 
         
 	end

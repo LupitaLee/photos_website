@@ -1,19 +1,20 @@
 
+<h1>Update<h1>
 
-
-<form action="/photos/<%= @photos.id %>" method="post">
+<form action="/photos/edit<%= @photo.id %>" method="POST">
   <input type="hidden" name="_method" value="patch">
 
   <label>Title:</label>
-  <input type="text" id="title" name="title" value="<%= @photo.title%>">
+  <input type="text" id="title" name="photo[title]" value="<%= @photo.title%>">
   <label>image:</label>
-  <input type="text" id="image_url" name="image_url" value=<img src="<%= @photo.image_url%>" >
+  <!--  #fisr question why shows <img in the show page browser -->
+  <input type="text" id="image_url" name="photo[image_url]" value=<img src="<%= @photo.image_url%>" >
 
   <label>Description:</label>
-  <input type="text" id="description" name="description" value="<%= @photo.description%>" >
+  <input type="text" id="description" name="photo[description]" value="<%= @photo.description%>" >
 
   
 
-  <input type="submit" name="submit" id="submit" >
+  <input type="submit" name="Update" id="submit" >
 
 </form>
