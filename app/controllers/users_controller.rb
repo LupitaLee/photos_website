@@ -10,11 +10,11 @@ class UsersController < ApplicationController
      @user = User.new(username: params[:username],email: params[:email], password: params[:password])
         #your code here!
         # done- validate users input so bad data cannot be persisted to the database.
-
-        if params[:username] == "" || params[:email] == "" || params[:password] == ""
+       
+        if !@user.save
             redirect '/signup'  #also flash can go here if user user input wrong password or dind fill in 
         else
-        @user.save
+        
         session["user_id"] = @user.id
         redirect "/login"
         end
@@ -22,29 +22,29 @@ class UsersController < ApplicationController
     end
 
     get '/login' do
+        redirect_if_logged_in
         erb :'sessions/login'
     end
 
     post '/login' do
-        if params[:username] == "" || params[:password] == ""
-            redirect '/login'
-        else
-            user = User.find_by(username: params[:username])
+        redirect_if_logged_in
+        user = User.find_by(username: params[:username])
             
-            if user && user.authenticate(params[:password])
-            session["user_id"] = user.id
+        if user && user.authenticate(params[:password])
+         session["user_id"] = user.id
            
             redirect "/account"
-            else 
+        else 
             redirect "/login"
-            end
-
         end
+
+       
         
     end
 
   
     get '/logout' do
+        redirect_if_not_logged_in
         session.clear
         redirect "/"
     end

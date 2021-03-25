@@ -7,8 +7,8 @@
   <label>Title:</label>
   <input type="text" id="title" name="photo[title]" value="<%= @photo.title%>">
   <label>image:</label>
-  <!--  #fisr question why shows <img in the show page browser -->
-  <input type="text" id="image_url" name="photo[image_url]" value=<img src="<%= @photo.image_url%>" >
+  
+  <input type="text" id="image_url" name="photo[image_url]" value="<%= @photo.image_url%>" >
 
   <label>Description:</label>
   <input type="text" id="description" name="photo[description]" value="<%= @photo.description%>" >
@@ -18,3 +18,4 @@
   <input type="submit" name="Update" id="submit" >
 
 </form>
+

@@ -4,13 +4,13 @@
 
 
 
-<ul>
+
 <% @photos.each do |photo| %>
-<h2><%= photo.title%></h2>
-<img src="<%= photo.image_url%>" alt="<%= photo.description%>" width="240" height="300"><br>
-<%= photo.description%>
+<a href='/photos/<%= photo.id %>'><img src="<%= photo.image_url%>"></a>
+ 
+
 <% end %>
-</ul>
 
-
+<!-- and have a link to another page which will show more information for one particular instance.
+-->
 

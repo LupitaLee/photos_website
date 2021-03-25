@@ -10,7 +10,12 @@ class ApplicationController < Sinatra::Base
     end
 
     get '/' do 
-        erb :welcome
+        erb :search
+    end
+
+    get '/search' do
+        @photo = Photo.find_by(title: params["title"])
+        erb :results
     end
 
 
@@ -34,7 +39,7 @@ class ApplicationController < Sinatra::Base
         end
 
         def redirect_if_logged_in
-            redirect "/photos" if logged_in?
+            redirect "/account" if logged_in?
         end
 
         

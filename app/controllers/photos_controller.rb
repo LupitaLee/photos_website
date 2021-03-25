@@ -3,9 +3,10 @@ class PhotosController < ApplicationController
 
     get '/photos' do 
         redirect_if_not_logged_in
-        @photos = current_user.photos
-       
+       @photos = current_user.photos
+        
         erb :'photos/index'
+        
     end
     # CREATE new photo (render form)
     get '/photos/new' do 
@@ -14,16 +15,9 @@ class PhotosController < ApplicationController
         erb :'photos/new'
     end
 
-     # see 1 photo
-    get '/photos/:id' do
 
-        redirect_if_not_logged_in
-        redirect_if_not_authorized
-        
-        erb :'photos/show'
-    end
 
-    # CREATE 1 photo
+      # CREATE 1 photo
     post '/photos' do
 
         redirect_if_not_logged_in
@@ -39,7 +33,17 @@ class PhotosController < ApplicationController
     
     end
 
-   
+
+     # see 1 photo
+    get '/photos/:id' do
+        
+        redirect_if_not_logged_in
+        redirect_if_not_authorized
+        
+        erb :'photos/show'
+    end
+
+  
 
 
 #update 1 photo (render form)
