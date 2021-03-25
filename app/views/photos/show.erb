@@ -8,5 +8,8 @@
 <a href="/photos/<%= @photo.id %>/edit">EDIT</a><br>
 
 
-<a href="/delete/<%= @photo.id %>/edit">Delete</a>
 
+<form action="/photos/<%= @photo.id %>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="delete">
+</form>

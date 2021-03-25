@@ -1,7 +1,7 @@
 
 <h1>Update<h1>
 
-<form action="/photos/edit<%= @photo.id %>" method="POST">
+<form action="/photos/<%= @photo.id %>" method="POST">
   <input type="hidden" name="_method" value="patch">
 
   <label>Title:</label>

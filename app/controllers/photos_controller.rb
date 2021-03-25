@@ -7,14 +7,14 @@ class PhotosController < ApplicationController
        
         erb :'photos/index'
     end
-
+    # CREATE new photo (render form)
     get '/photos/new' do 
         
         redirect_if_not_logged_in
         erb :'photos/new'
     end
 
-
+     # see 1 photo
     get '/photos/:id' do
 
         redirect_if_not_logged_in
@@ -23,7 +23,7 @@ class PhotosController < ApplicationController
         erb :'photos/show'
     end
 
-
+    # CREATE 1 photo
     post '/photos' do
 
         redirect_if_not_logged_in
@@ -31,6 +31,7 @@ class PhotosController < ApplicationController
         if photo.save
             redirect to "/photos/#{photo.id}"
         else 
+            flash[:error] = "#{photo.errors.full_messages.join(",")}"
             redirect to "/photos/new"
         end
 
@@ -53,7 +54,7 @@ class PhotosController < ApplicationController
         redirect_if_not_logged_in
         redirect_if_not_authorized
 
-        if @photo.update(params["rental"])
+        if @photo.update(params["photo"])
             redirect to "/photos/#{@photo.id}"
         else
             redirect to "/photos/#{@photo.id}/edit"
@@ -61,7 +62,7 @@ class PhotosController < ApplicationController
         
 
     end
-
+     # DELETE 1 photo
     delete '/photos/:id' do 
         redirect_if_not_logged_in
         redirect_if_not_authorized
@@ -75,8 +76,9 @@ class PhotosController < ApplicationController
 
   def redirect_if_not_authorized
       @photo = Photo.find_by_id(params[:id])
-      if @photo.user_id != session[:user_id]
-        redirect "/photos"
+      if @photo.user_id != session["user_id"]
+        redirect to "/photos"
+        
       end
   end
     

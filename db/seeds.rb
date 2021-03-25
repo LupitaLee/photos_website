@@ -6,7 +6,7 @@ puts "adding photos to users"
 
     :image_url => "https://source.unsplash.com/random/200x200?sig=#{(0..100).to_a.sample}",
     
-    :description => Faker::Lorem.words,
+    :description => Faker::Lorem.sentence,
 
     :user_id => User.ids.sample
 

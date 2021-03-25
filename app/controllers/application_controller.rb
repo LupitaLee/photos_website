@@ -6,6 +6,7 @@ class ApplicationController < Sinatra::Base
         set :public_folder, 'public'
         enable :sessions
         set :session_secret, ENV['SESSION_SECRET']
+        use Rack::Flash
     end
 
     get '/' do 
@@ -33,7 +34,7 @@ class ApplicationController < Sinatra::Base
         end
 
         def redirect_if_logged_in
-            redirect "/photo" if logged_in?
+            redirect "/photos" if logged_in?
         end
 
         
