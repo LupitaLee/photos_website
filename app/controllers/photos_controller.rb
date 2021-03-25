@@ -30,7 +30,7 @@ class PhotosController < ApplicationController
         photo = current_user.photos.build(params[:photo])
         if photo.save
             redirect to "/photos/#{photo.id}"
-        else 
+        else     # movie.errors coming from active record. when the validation on save  fails is going to give that error.
             flash[:error] = "#{photo.errors.full_messages.join(",")}"
             redirect to "/photos/new"
         end
