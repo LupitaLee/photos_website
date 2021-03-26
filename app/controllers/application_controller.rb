@@ -14,8 +14,16 @@ class ApplicationController < Sinatra::Base
     end
 
     get '/search' do
-        @photo = Photo.find_by(title: params["title"])
+        if params[:title]== ""
+            @photos = Photo.all
+        else 
+
+        @photos = Photo.all.find_all {|photo| photo.title == params[:title]}
+        end
+    
+
         erb :results
+       
     end
 
 

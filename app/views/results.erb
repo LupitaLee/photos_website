@@ -1,8 +1,11 @@
 
 
- <img src='<%= @photo.image_url%>' alt="<%= @photo.description%>"><br>
-
-  
 
 
 
+
+ <% @photos.each do |photo| %>
+    <img src='<%= photo.image_url%>' alt="<%= photo.description%>"><br>
+     
+    
+    <% end %>
