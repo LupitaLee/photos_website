@@ -1,6 +1,6 @@
 # Photos_website
 
-Welcome to StockPhoto website, in this website you will be able to signup, login  and add photos and description which you will be able to edit and delete. To experiment with that code, run shotgun for an interactive prompt and follow the http link given in the terminal.
+Welcome to StockPhoto website, in this website you will be able to signup, login  and add photos and description which you will be able to edit and delete. To experiment with this code, follow the iinstrictions below.
 
 
 
@@ -12,16 +12,17 @@ https://github.com/LupitaLee/photos_website.git
 
 select the code button and select SSH to fork, clone it in your terminal.
 
-And then execute:
-
-    $ bundle install
+cd into the photos_website directory
+run bundle install in your console
+run shotgun
+open your favorite browser and enter the given local url provided by the shotgun server!
 
 
 ## Usage
 
 Click this link to see a brief description on how to use the program.
 
---- link go here the 2 min video -----
+https://drive.google.com/file/d/15slgKmQtWcaZpcPpG6TrwjWpUXRi-Rzl/view?usp=sharing
 
 
 
