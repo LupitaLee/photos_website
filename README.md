@@ -1,6 +1,6 @@
 # Photos_website
 
-Welcome to StockPhoto website. To experiment with that code, run shotgun for an interactive prompt and follow the http link given in the terminal.
+Welcome to StockPhoto website, in this website you will be able to signup, login  and add photos and description which you will be able to edit and delete. To experiment with that code, run shotgun for an interactive prompt and follow the http link given in the terminal.
 
 
 
@@ -23,9 +23,6 @@ Click this link to see a brief description on how to use the program.
 
 --- link go here the 2 min video -----
 
-## Development
-
-After checking out the repo, run `shotgun` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 
 
