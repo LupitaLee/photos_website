@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
         erb :'photos/index'
         
     end
-    # CREATE new photo (render form)
+    
     get '/photos/new' do 
         
         redirect_if_not_logged_in
@@ -17,14 +17,14 @@ class PhotosController < ApplicationController
 
 
 
-      # CREATE 1 photo
+     
     post '/photos' do
 
         redirect_if_not_logged_in
         photo = current_user.photos.build(params[:photo])
         if photo.save
             redirect to "/photos/#{photo.id}"
-        else     # movie.errors coming from active record. when the validation on save  fails is going to give that error.
+        else    
             flash[:error] = "#{photo.errors.full_messages.join(",")}"
             redirect to "/photos/new"
         end
@@ -34,7 +34,7 @@ class PhotosController < ApplicationController
     end
 
 
-     # see 1 photo
+    
     get '/photos/:id' do
         
         redirect_if_not_logged_in
@@ -46,14 +46,14 @@ class PhotosController < ApplicationController
   
 
 
-#update 1 photo (render form)
+
     get '/photos/:id/edit' do
         redirect_if_not_logged_in
         redirect_if_not_authorized
        
         erb :'photos/edit'
     end
-#update 1 photo (save in db)
+
     patch '/photos/:id' do 
         redirect_if_not_logged_in
         redirect_if_not_authorized
@@ -66,7 +66,7 @@ class PhotosController < ApplicationController
         
 
     end
-     # DELETE 1 photo
+   
     delete '/photos/:id' do 
         redirect_if_not_logged_in
         redirect_if_not_authorized

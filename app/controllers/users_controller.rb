@@ -8,11 +8,9 @@ class UsersController < ApplicationController
     post '/signup' do
         
      @user = User.new(username: params[:username],email: params[:email], password: params[:password])
-        #your code here!
-        # done- validate users input so bad data cannot be persisted to the database.
        
         if !@user.save
-            redirect '/signup'  #also flash can go here if user user input wrong password or dind fill in 
+            redirect '/signup'  
         else
         
         session["user_id"] = @user.id
