@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
- #here ill have the signup,Log in,sign out
+
 
     get '/signup' do
         erb :'sessions/signup'

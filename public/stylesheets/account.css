@@ -6,11 +6,11 @@ body {
     margin: 0;
   }
   
-  /* Header/Logo Title */
+ 
   .bg1 {
     padding: 80px;
     text-align: center;
-    /* background: black; */
+   
     color: white;
     font-size: 30px;
     background: url("https://images.unsplash.com/photo-1544441118-2b011561f89c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTc0fHxjYW1lcmF8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60") no-repeat;
@@ -20,5 +20,5 @@ body {
     
   }
   
-  /* Page Content */
+  
   .content {padding:20px;}
