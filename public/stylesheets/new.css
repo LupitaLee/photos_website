@@ -1,0 +1,76 @@
+
+body{
+  
+    background: url("https://images.unsplash.com/photo-1613205256376-789adab64e71?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY0fHxicm93bnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60");
+    width: 100%;
+    height: 100vh;
+    background-size: 100%;
+
+}
+@media only screen and (max-with: 678px) {
+.add-box{
+      background-size:300%
+    }
+}
+.add-box {
+    width: 320px;
+    height: 420px;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+
+}
+
+.h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.add-box p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.add-box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.add-box input[type="text"],input[type="title"]
+{
+   border: none; 
+   border-bottom: 1px solid #fff;
+   background: transparent;
+   outline: none;
+   height: 40px;
+   color: white;
+   font-size: 16px;
+
+}
+
+.add-box input[type="submit"]
+{
+    border: none; 
+    outline: none;
+    height: 40px;
+    background: #0d6a5c;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.add-box input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: orange;
+    color: #000;
+
+}
