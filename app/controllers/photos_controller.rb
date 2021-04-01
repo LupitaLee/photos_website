@@ -8,6 +8,7 @@ class PhotosController < ApplicationController
         erb :'photos/index'
         
     end
+
     
     get '/photos/new' do 
         
@@ -79,9 +80,9 @@ class PhotosController < ApplicationController
 
 
   def redirect_if_not_authorized
-      @photo = Photo.find_by_id(params[:id])
-      if @photo.user_id != session["user_id"]
-        redirect to "/photos"
+      @photo = Photo.find_by_id(params[:id])  
+      if @photo.user_id != session["user_id"] #current user 
+        redirect to "/photos"  
         
       end
   end
